@@ -9,9 +9,11 @@ class ImageWidget extends StatefulWidget {
 
 class _ImageWidgetState extends State<ImageWidget> {
   final TextEditingController _urlController = TextEditingController(
-    text: 'https://i.pinimg.com/736x/fc/01/db/fc01dba0e555ff837a14f065dbaca13e.jpg',
+    text:
+        'https://i.pinimg.com/736x/fc/01/db/fc01dba0e555ff837a14f065dbaca13e.jpg',
   );
-  String _imageUrl = 'https://i.pinimg.com/736x/fc/01/db/fc01dba0e555ff837a14f065dbaca13e.jpg';
+  String _imageUrl =
+      'https://i.pinimg.com/736x/fc/01/db/fc01dba0e555ff837a14f065dbaca13e.jpg';
 
   void _updateImage() {
     setState(() {
@@ -73,7 +75,7 @@ class _ImageWidgetState extends State<ImageWidget> {
                             child: CircularProgressIndicator(
                               value: loadingProgress.expectedTotalBytes != null
                                   ? loadingProgress.cumulativeBytesLoaded /
-                                      loadingProgress.expectedTotalBytes!
+                                        loadingProgress.expectedTotalBytes!
                                   : null,
                             ),
                           ),
@@ -100,9 +102,7 @@ class _ImageWidgetState extends State<ImageWidget> {
                   : Container(
                       height: 250,
                       color: Colors.grey[200],
-                      child: const Center(
-                        child: Text('Masukkan URL gambar'),
-                      ),
+                      child: const Center(child: Text('Masukkan URL gambar')),
                     ),
             ),
           ],

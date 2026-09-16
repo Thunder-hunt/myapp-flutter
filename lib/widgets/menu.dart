@@ -9,7 +9,7 @@ import 'package:oopdart/widgets/sizebox_widget.dart';
 import 'package:oopdart/widgets/icon_widget.dart';
 import 'package:oopdart/widgets/image_offline_widget.dart';
 import 'package:oopdart/widgets/padding_widget.dart';
-
+import 'package:oopdart/widgets/camera_widget.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
@@ -43,7 +43,9 @@ class MenuPage extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const ContainerWidget()),
+                MaterialPageRoute(
+                  builder: (context) => const ContainerWidget(),
+                ),
               );
             },
             child: const Padding(
@@ -100,7 +102,9 @@ class MenuPage extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const ImageOfflineWidget()),
+                MaterialPageRoute(
+                  builder: (context) => const ImageOfflineWidget(),
+                ),
               );
             },
             child: const Padding(
@@ -119,7 +123,9 @@ class MenuPage extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const CalculatorWidget()),
+                MaterialPageRoute(
+                  builder: (context) => const CalculatorWidget(),
+                ),
               );
             },
             child: const Padding(
@@ -202,6 +208,25 @@ class MenuPage extends StatelessWidget {
               padding: EdgeInsets.only(top: 10, left: 10, right: 10),
               child: Text(
                 '10. Padding Widget',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const CameraWidget()),
+              );
+            },
+            child: const Padding(
+              padding: EdgeInsets.only(top: 10, left: 10, right: 10),
+              child: Text(
+                '11. Camera Widget',
                 style: TextStyle(
                   color: Colors.blue,
                   fontSize: 24,

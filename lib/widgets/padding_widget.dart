@@ -20,10 +20,7 @@ class PaddingWidget extends StatelessWidget {
           children: [
             const Text(
               'Mobile Development',
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold
-              ),
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
 
             const SizedBox(height: 10),
@@ -58,24 +55,18 @@ class PaddingWidget extends StatelessWidget {
 
                   Text(
                     'Laptop ASUS',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
+                    style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
 
                   SizedBox(height: 5),
 
                   Text(
                     'Rp 8.500.000',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
+                    style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

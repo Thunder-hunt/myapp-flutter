@@ -14,5 +14,7 @@ void main() {
     expect(find.text('7. Lorem Ipsum'), findsOneWidget);
     expect(find.text('8. Sizebox Widget'), findsOneWidget);
     expect(find.text('9. Icon Widget'), findsOneWidget);
+    expect(find.text('10. Padding Widget'), findsOneWidget);
+    expect(find.text('11. Camera Widget'), findsOneWidget);
   });
 }

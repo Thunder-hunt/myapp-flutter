@@ -13,33 +13,27 @@ class SizeboxWidget extends StatelessWidget {
         ),
         backgroundColor: Colors.purpleAccent,
       ),
-        body: Center(
-          child: SizedBox(
-            width: 300,
-            child: Column(
-              children: [
-                SizedBox(height: 15),
-                CircleAvatar(radius: 50, child: Icon(Icons.person, size: 50)),
-                SizedBox(height: 25),
-                Text(
-                  'Rainar',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 5),
-                  Text(
-                    'Mobile Developer/Ui Designer',
-                    style: TextStyle(
-                      color: Colors.grey,
-                    ),
-                  ),
-              ],
-
-            ),
+      body: Center(
+        child: SizedBox(
+          width: 300,
+          child: Column(
+            children: [
+              SizedBox(height: 15),
+              CircleAvatar(radius: 50, child: Icon(Icons.person, size: 50)),
+              SizedBox(height: 25),
+              Text(
+                'Rainar',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 5),
+              Text(
+                'Mobile Developer/Ui Designer',
+                style: TextStyle(color: Colors.grey),
+              ),
+            ],
           ),
         ),
-      );
+      ),
+    );
   }
 }
