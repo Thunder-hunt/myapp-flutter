@@ -14,6 +14,7 @@ import 'package:oopdart/widgets/dino_game_widget.dart';
 import 'package:oopdart/widgets/chess_widget.dart';
 import 'package:oopdart/widgets/row_widget.dart';
 import 'package:oopdart/widgets/column_widget.dart';
+import 'package:oopdart/widgets/tugas1_widget.dart';
 
 class _LayoutItem {
   const _LayoutItem(this.name, this.builder);
@@ -350,6 +351,60 @@ class MenuPage extends StatelessWidget {
                 }).toList(),
               ),
             ),
+            const SizedBox(height: 12),
+            Container(
+              width: double.infinity,
+              color: const Color(0xFF3F51B5),
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: const Text(
+                'EVALUASI',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Container(height: 5, color: Colors.yellow),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Wrap(
+                spacing: 12,
+                runSpacing: 8,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Tugas1Widget(),
+                        ),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.yellow,
+                      foregroundColor: Colors.black,
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 24,
+                        vertical: 12,
+                      ),
+                    ),
+                    child: const Text(
+                      'TUGAS 1',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 12),
           ],
         ),
       ),
