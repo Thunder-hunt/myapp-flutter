@@ -15,6 +15,9 @@ import 'package:oopdart/widgets/chess_widget.dart';
 import 'package:oopdart/widgets/row_widget.dart';
 import 'package:oopdart/widgets/column_widget.dart';
 import 'package:oopdart/widgets/stack_widget.dart';
+import 'package:oopdart/widgets/align_widget.dart';
+import 'package:oopdart/widgets/expanded_widget.dart';
+import 'package:oopdart/widgets/flexible_widget.dart';
 import 'package:oopdart/widgets/tugas1_widget.dart';
 
 class _LayoutItem {
@@ -33,9 +36,9 @@ class MenuPage extends StatelessWidget {
       _LayoutItem('Row', (context) => const RowWidget()),
       _LayoutItem('Column', (context) => const ColumnWidget()),
       _LayoutItem('Stack', (context) => const StackWidget()),
-      _LayoutItem('Expanded', (context) => LayoutDemoPage(title: 'Expanded')),
-      _LayoutItem('Flexible', (context) => LayoutDemoPage(title: 'Flexible')),
-      _LayoutItem('Align', (context) => const LayoutDemoPage(title: 'Align')),
+      _LayoutItem('Expanded', (context) => const ExpandedWidget()),
+      _LayoutItem('Flexible', (context) => const FlexibleWidget()),
+      _LayoutItem('Align', (context) => const AlignWidget()),
       _LayoutItem('Wrap', (context) => const LayoutDemoPage(title: 'Wrap')),
       _LayoutItem('ListView', (context) => LayoutDemoPage(title: 'ListView')),
       _LayoutItem('GridView', (context) => LayoutDemoPage(title: 'GridView')),
