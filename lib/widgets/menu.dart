@@ -19,6 +19,7 @@ import 'package:oopdart/widgets/align_widget.dart';
 import 'package:oopdart/widgets/expanded_widget.dart';
 import 'package:oopdart/widgets/flexible_widget.dart';
 import 'package:oopdart/widgets/tugas1_widget.dart';
+import 'package:oopdart/widgets/tugas2_widget.dart';
 
 class _LayoutItem {
   const _LayoutItem(this.name, this.builder);
@@ -372,10 +373,9 @@ class MenuPage extends StatelessWidget {
             ),
             Container(height: 5, color: Colors.yellow),
             Padding(
-              padding: const EdgeInsets.all(10),
-              child: Wrap(
-                spacing: 12,
-                runSpacing: 8,
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
                     onPressed: () {
@@ -388,8 +388,8 @@ class MenuPage extends StatelessWidget {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.yellow,
-                      foregroundColor: Colors.black,
-                      elevation: 0,
+                      foregroundColor: Colors.blue,
+                      elevation: 2,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(4),
                       ),
@@ -400,6 +400,34 @@ class MenuPage extends StatelessWidget {
                     ),
                     child: const Text(
                       'TUGAS 1',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Tugas2Widget(),
+                        ),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.yellow,
+                      foregroundColor: Colors.blue,
+                      elevation: 2,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 24,
+                        vertical: 12,
+                      ),
+                    ),
+                    child: const Text(
+                      'TUGAS 2',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
