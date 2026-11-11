@@ -1,45 +1,29 @@
-# 📱 oopdart
+# oopdart
 
-![App screenshot](file:///C:/Users/raina/.gemini/antigravity-ide/brain/4e6553b1-afad-497e-9c0-1c2aaad70036/oopdart_screenshot_1792554569557.png)
+Proyek Flutter untuk belajar berbagai widget dan konsep layout di Flutter.
 
-A **modern Flutter learning project** that demonstrates various usages of the `Column` widget, including text, icons, images, and interactive elements. Ideal for beginners who want to explore layout concepts and UI styling in Flutter.
+## Fitur
 
-## ✨ Features
+- Text, Container, Center, Image, Icon, Padding, SizedBox Widget
+- Calculator & Lorem Ipsum
+- Camera Widget
+- Dino Jump Game & Game Catur
+- Layout Widget: Row, Column, Stack, Expanded, Flexible, Align, Wrap, ListView, GridView
+- Evaluasi / Tugas
 
-- Multiple column examples showcasing alignment, spacing, and cross‑axis control.
-- Interactive floating action button to navigate back.
-- Rich visual design with vibrant colors and dark‑mode ready UI.
-- Sample profile section with avatar and social links.
-- Easy to extend – add your own widgets and experiment.
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Flutter SDK (stable) – [install Flutter](https://flutter.dev/docs/get-started/install)
-- Android/iOS device or emulator
-
-### Setup
+## Cara Menjalankan
 
 ```bash
-git clone https://github.com/yourusername/oopdart.git
-cd oopdart
+git clone https://github.com/Thunder-hunt/myapp-flutter.git
+cd myapp-flutter
 flutter pub get
 flutter run
 ```
 
-## 📖 Usage
+## Build APK
 
-The app launches to a scrollable page displaying a series of column layouts, each illustrating a different `Column` configuration (e.g., `mainAxisAlignment`, `crossAxisAlignment`, `MainAxisAlignment.spaceEvenly`, etc.). Use the floating action button at the bottom right to go back.
+```bash
+flutter build apk --release
+```
 
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to open issues or submit pull requests to improve examples, fix bugs, or add new layouts.
-
-## 📄 License
-
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
-
----
-
-*Happy coding! 🎉*
+APK tersedia di `build/app/outputs/flutter-apk/app-release.apk`
