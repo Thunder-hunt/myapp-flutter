@@ -146,8 +146,9 @@ class _ChessWidgetState extends State<ChessWidget> {
     final result = <_Move>[];
     for (var r = 0; r < 8; r++) {
       for (var c = 0; c < 8; c++) {
-        if (board[r][c]?.side == side)
+        if (board[r][c]?.side == side) {
           result.addAll(_legalMoves(Point(r, c), board));
+        }
       }
     }
     return result;
@@ -172,8 +173,9 @@ class _ChessWidgetState extends State<ChessWidget> {
       final next = from.x + direction;
       if (_inside(next, from.y) && board[next][from.y] == null) {
         add(next, from.y);
-        if (from.x == start && board[from.x + 2 * direction][from.y] == null)
+        if (from.x == start && board[from.x + 2 * direction][from.y] == null) {
           add(from.x + 2 * direction, from.y);
+        }
       }
       for (final dc in [-1, 1]) {
         final col = from.y + dc;
@@ -181,8 +183,9 @@ class _ChessWidgetState extends State<ChessWidget> {
         final target = board[next][col];
         if (target != null &&
             target.side != piece.side &&
-            target.type != PieceType.king)
+            target.type != PieceType.king) {
           add(next, col);
+        }
         if (_enPassant == Point(next, col)) add(next, col, enPassant: true);
       }
     } else if (piece.type == PieceType.knight) {
@@ -196,7 +199,9 @@ class _ChessWidgetState extends State<ChessWidget> {
         Point(-1, 2),
         Point(-1, -2),
       ];
-      for (final jump in jumps) add(from.x + jump.x, from.y + jump.y);
+      for (final jump in jumps) {
+        add(from.x + jump.x, from.y + jump.y);
+      }
     } else if (piece.type == PieceType.king) {
       for (var r = from.x - 1; r <= from.x + 1; r++) {
         for (var c = from.y - 1; c <= from.y + 1; c++) {
@@ -204,27 +209,31 @@ class _ChessWidgetState extends State<ChessWidget> {
         }
       }
       if (!piece.moved && !_inCheck(piece.side, board)) {
-        if (_canCastle(from.x, 7, piece.side, board, true))
+        if (_canCastle(from.x, 7, piece.side, board, true)) {
           result.add(_Move(from, Point(from.x, 6), castle: true));
-        if (_canCastle(from.x, 0, piece.side, board, false))
+        }
+        if (_canCastle(from.x, 0, piece.side, board, false)) {
           result.add(_Move(from, Point(from.x, 2), castle: true));
+        }
       }
     } else {
       final directions = <Point<int>>[];
-      if (piece.type == PieceType.rook || piece.type == PieceType.queen)
+      if (piece.type == PieceType.rook || piece.type == PieceType.queen) {
         directions.addAll(const [
           Point(1, 0),
           Point(-1, 0),
           Point(0, 1),
           Point(0, -1),
         ]);
-      if (piece.type == PieceType.bishop || piece.type == PieceType.queen)
+      }
+      if (piece.type == PieceType.bishop || piece.type == PieceType.queen) {
         directions.addAll(const [
           Point(1, 1),
           Point(1, -1),
           Point(-1, 1),
           Point(-1, -1),
         ]);
+      }
       for (final direction in directions) {
         var r = from.x + direction.x;
         var c = from.y + direction.y;
@@ -233,8 +242,9 @@ class _ChessWidgetState extends State<ChessWidget> {
             add(r, c);
           } else {
             if (board[r][c]!.side != piece.side &&
-                board[r][c]!.type != PieceType.king)
+                board[r][c]!.type != PieceType.king) {
               add(r, c);
+            }
             break;
           }
           r += direction.x;
@@ -253,8 +263,9 @@ class _ChessWidgetState extends State<ChessWidget> {
     bool kingSide,
   ) {
     final rook = board[row][rookCol];
-    if (rook?.type != PieceType.rook || rook?.side != side || rook!.moved)
+    if (rook?.type != PieceType.rook || rook?.side != side || rook!.moved) {
       return false;
+    }
     final between = kingSide ? [5, 6] : [1, 2, 3];
     if (between.any((c) => board[row][c] != null)) return false;
     final path = kingSide ? [5, 6] : [3, 2];
@@ -272,11 +283,13 @@ class _ChessWidgetState extends State<ChessWidget> {
     if (piece == null) return false;
     final dr = target.x - from.x;
     final dc = target.y - from.y;
-    if (piece.type == PieceType.pawn)
+    if (piece.type == PieceType.pawn) {
       return dr == (piece.side == Side.white ? -1 : 1) && dc.abs() == 1;
-    if (piece.type == PieceType.knight)
+    }
+    if (piece.type == PieceType.knight) {
       return (dr.abs() == 2 && dc.abs() == 1) ||
           (dr.abs() == 1 && dc.abs() == 2);
+    }
     if (piece.type == PieceType.king) return dr.abs() <= 1 && dc.abs() <= 1;
     final diagonal = dr.abs() == dc.abs();
     final straight = dr == 0 || dc == 0;
@@ -302,16 +315,18 @@ class _ChessWidgetState extends State<ChessWidget> {
     Point<int>? king;
     for (var r = 0; r < 8; r++) {
       for (var c = 0; c < 8; c++) {
-        if (board[r][c]?.type == PieceType.king && board[r][c]?.side == side)
+        if (board[r][c]?.type == PieceType.king && board[r][c]?.side == side) {
           king = Point(r, c);
+        }
       }
     }
     if (king == null) return true;
     final enemy = _other(side);
     for (var r = 0; r < 8; r++) {
       for (var c = 0; c < 8; c++) {
-        if (board[r][c]?.side == enemy && _attacks(Point(r, c), king, board))
+        if (board[r][c]?.side == enemy && _attacks(Point(r, c), king, board)) {
           return true;
+        }
       }
     }
     return false;
@@ -321,8 +336,9 @@ class _ChessWidgetState extends State<ChessWidget> {
     final piece = board[move.from.x][move.from.y];
     if (piece == null) return;
     board[move.from.x][move.from.y] = null;
-    if (move.enPassant)
+    if (move.enPassant) {
       board[move.to.x + (piece.side == Side.white ? 1 : -1)][move.to.y] = null;
+    }
     board[move.to.x][move.to.y] = piece;
     piece.moved = true;
     if (move.castle) {
@@ -389,8 +405,9 @@ class _ChessWidgetState extends State<ChessWidget> {
     _botTimer?.cancel();
     _botTimer = Timer(const Duration(milliseconds: 500), () {
       final available = _allLegal(_turn, _board);
-      if (available.isNotEmpty)
+      if (available.isNotEmpty) {
         _play(available[Random().nextInt(available.length)]);
+      }
     });
   }
 

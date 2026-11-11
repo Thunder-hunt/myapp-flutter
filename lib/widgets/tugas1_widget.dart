@@ -120,7 +120,7 @@ class Tugas1Widget extends StatelessWidget {
                           errorBuilder: (context, error, stackTrace) =>
                               Container(color: const Color(0xFF2D1E16)),
                         ),
-                        Container(color: Colors.black.withOpacity(0.34)),
+                        Container(color: Colors.black.withValues(alpha: 0.34)),
                         Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Column(
